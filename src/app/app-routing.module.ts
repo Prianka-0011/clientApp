@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JobDetailComponent } from './pages/job-detail/job-detail.component';
 import { SearchComponent } from './pages/search/search.component';
+import { JobAddComponent } from './pages/job-add/job-add.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path:"jobs/:jobId",
     component:JobDetailComponent
+  },
+  {
+    path:"addJob/:jobId",
+    component:JobAddComponent
   }
   ,
   {

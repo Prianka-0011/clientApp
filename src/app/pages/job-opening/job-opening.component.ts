@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./job-opening.component.css']
 })
 export class JobOpeningComponent implements OnInit{
-   jobs: Jobopening[] = new Array<Jobopening>();
+  jobs: Jobopening[] = new Array<Jobopening>();
   totalJob: number = 0;
   currentPage: number = 0;
 
@@ -25,11 +25,13 @@ export class JobOpeningComponent implements OnInit{
 
   }
   ngOnInit(): void {
+
     this.getAllJob();
     this.getJobCount();
   }
 
   getAllJob() {
+    console.log("comming from delete")
     let query = "";
     if (this.search && this.search.trim().length > 0) {
       query += this.search;
@@ -45,7 +47,7 @@ export class JobOpeningComponent implements OnInit{
 
       next:(jobs:any)=>{
         this.jobs=jobs.data;
-        console.log(this.jobs)
+        console.log("JOBS", jobs)
       },error:(error:any)=>{
 
       }
@@ -79,8 +81,27 @@ export class JobOpeningComponent implements OnInit{
     this.offset += this.count;
     this.getAllJob();
   }
-  detailView(event:any)
+  detailView(jobId:any)
   {
-    this.router.navigate([`jobs/${event}`])
+    this.router.navigate([`jobs/${jobId}`])
+  }
+  DeleteRecord(jobId:any) {
+    console.log("delete"+jobId)
+    this.service.delete(jobId).subscribe({
+      next:(job)=>{
+
+          this.getAllJob();
+          this.getJobCount();
+
+      },
+      error:()=>{
+
+      }
+    })
+  }
+  addNewJob()
+  {
+    const id='00000000-0000-0000-0000-000000000000'
+    this.router.navigate(["addJob/"+id]);
   }
 }

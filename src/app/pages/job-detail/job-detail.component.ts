@@ -17,7 +17,7 @@ export class JobDetailComponent {
 ngOnInit(): void {
 const jobId = this._activatedRoute.snapshot.params["jobId"];
 if (jobId) {
-  this.jobService.getOne(jobId).subscribe({next:(job)=>{
+  this.jobService.getOne(jobId).subscribe({next:(job:any)=>{
     if(job)
     {
       this.jobOpen=job.data;

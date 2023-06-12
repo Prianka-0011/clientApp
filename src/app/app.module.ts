@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { JobDetailComponent } from './pages/job-detail/job-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './pages/search/search.component';
+import { JobAddComponent } from './pages/job-add/job-add.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SearchComponent } from './pages/search/search.component';
     HeaderComponent,
     HomeComponent,
     JobDetailComponent,
-    SearchComponent
+    SearchComponent,
+    JobAddComponent
   ],
   imports: [
     BrowserModule,

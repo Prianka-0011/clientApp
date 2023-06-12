@@ -1,15 +1,21 @@
 
-<div class="job-list">
-  <ul>
-    <li *ngFor="let job of jobs" >{{job.tittle}} <button (click)="detailView(job._id)">detail</button></li>
-  </ul>
-</div>
-<div class="pt-3"
-*ngIf="jobs && jobs.length > 0">
-<button class="btn btn-dark me-4"
-  [disabled]="disableBackward()"
-  (click)="prev()">Prev</button>
-<button class="btn btn-dark"
-  [disabled]="disableForward()"
-  (click)="next()">Next</button>
+<div class="container">
+  <div class="job-list">
+    <button class="btn btn-primary" (click)="addNewJob()">New+</button>
+    <ul>
+      <li *ngFor="let job of jobs" >{{job.tittle}}
+        <button class="btn btn-primary" (click)="detailView(job._id)">detail</button>
+        <button class="btn btn-warning" (click)="DeleteRecord(job._id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <div class="pt-3"
+  *ngIf="jobs && jobs.length > 0">
+  <button class="btn btn-dark me-4"
+    [disabled]="disableBackward()"
+    (click)="prev()">Prev</button>
+  <button class="btn btn-dark"
+    [disabled]="disableForward()"
+    (click)="next()">Next</button>
+  </div>
 </div>

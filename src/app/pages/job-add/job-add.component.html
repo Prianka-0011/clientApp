@@ -1,0 +1,68 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-6">
+    <div class="add-form">
+      <form [formGroup]="jobForm" (ngSubmit)="addNewJob()">
+        <label class="mb-2">Tittle</label>
+        <input type="text"
+          class="form-control mb-3"
+          placeholder="Job tittle"
+          formControlName="tittle"
+          required/>
+
+        <label class="mb-2">Job Description</label>
+        <textarea type="text"
+          class="form-control mb-3"
+          placeholder="Write here"
+          formControlName="description"
+          required>
+        </textarea>
+
+        <label class="mb-2">Salary</label>
+        <input type="number"
+          class="form-control mb-3"
+          placeholder="Enter salary"
+          formControlName="salary"
+          required/>
+
+        <label class="mb-2">Experience (Year)</label>
+        <input type="number"
+          class="form-control mb-3"
+          placeholder="Example: 2"
+          formControlName="experience"
+          required/>
+
+        <label class="mb-2">Job Location</label>
+      <div formGroupName="location"
+          class="d-flex input-group">
+
+          <input type="number"
+          class="form-control mb-3"
+          placeholder="Latitude"
+          formControlName="latitude"
+          required/>
+        <input type="number"
+          class="form-control mb-3"
+          placeholder="Longitude value"
+          formControlName="longitude"
+          required/>
+
+        </div>
+
+        <label class="mb-2">Skills (separate by comma)</label>
+        <input type="text"
+          class="form-control mb-3"
+          placeholder="Example: Java, HTML"
+          formControlName="skills"
+          required/>
+
+        <button type="submit"
+          class="btn btn-primary mt-2 mb-3"
+          [disabled]="jobForm.invalid">Add Job</button>
+      </form>
+
+      </div>
+  </div>
+ </div>
+
+</div>
