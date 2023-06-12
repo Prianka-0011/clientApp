@@ -1,0 +1,45 @@
+.header {
+
+  height: 80px;
+
+  background-color: #6d6060;
+  color: azure;
+  display: flex;
+
+  align-items: center;
+
+  padding-left: 20px;
+
+  padding-right: 20px;
+
+  justify-content: space-between;
+
+}
+
+
+
+
+.header button {
+
+  background-color: transparent;
+color: #fff;
+  border: none;
+
+  outline: none;
+
+  margin: 0 10px;
+
+}
+
+
+
+
+.header input {
+
+  border: thin solid rgb(178, 159, 159);
+
+  border-radius: 8px;
+
+  width: 400px;
+
+}
