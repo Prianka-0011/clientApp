@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./job-opening.component.css']
 })
 export class JobOpeningComponent implements OnInit{
+  pageValue:number=0
   jobs: Jobopening[] = new Array<Jobopening>();
   totalJob: number = 0;
   currentPage: number = 0;
@@ -103,5 +104,8 @@ export class JobOpeningComponent implements OnInit{
   {
     const id='00000000-0000-0000-0000-000000000000'
     this.router.navigate(["addJob/"+id]);
+  }
+  pageSize(){
+console.log(this.pageValue);
   }
 }

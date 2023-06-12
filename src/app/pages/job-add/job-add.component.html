@@ -35,17 +35,19 @@
         <label class="mb-2">Job Location</label>
       <div formGroupName="location"
           class="d-flex input-group">
-
+          <div formGroupName="cordinators">
+            <input type="number"
+            class="form-control mb-3"
+            placeholder="Latitude"
+            formControlName="0"
+            required/>
           <input type="number"
-          class="form-control mb-3"
-          placeholder="Latitude"
-          formControlName="latitude"
-          required/>
-        <input type="number"
-          class="form-control mb-3"
-          placeholder="Longitude value"
-          formControlName="longitude"
-          required/>
+            class="form-control mb-3"
+            placeholder="Longitude value"
+            formControlName="1"
+            required/>
+          </div>
+
 
         </div>
 

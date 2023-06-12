@@ -11,6 +11,7 @@ import { JobDetailComponent } from './pages/job-detail/job-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './pages/search/search.component';
 import { JobAddComponent } from './pages/job-add/job-add.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { JobAddComponent } from './pages/job-add/job-add.component';
     HomeComponent,
     JobDetailComponent,
     SearchComponent,
-    JobAddComponent
+    JobAddComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

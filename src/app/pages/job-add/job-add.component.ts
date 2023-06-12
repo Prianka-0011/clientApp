@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Jobopening } from 'src/app/models/jobopening';
 import { JobService } from 'src/app/services/job.service';
 
@@ -10,15 +11,17 @@ import { JobService } from 'src/app/services/job.service';
 })
 export class JobAddComponent {
   jobForm !:FormGroup
-  constructor(private fromBuilder : FormBuilder,private jobService:JobService){
+  constructor(private fromBuilder : FormBuilder,private jobService:JobService,private router:Router){
     this.jobForm = this.fromBuilder.group({
       tittle:["",  Validators.required],
       salary:["" , Validators.required],
       description:["",  Validators.required],
       experience:["", Validators.required],
       location: this.fromBuilder.group({
-        longitude: ["", Validators.required],
-        latitude: ["", Validators.required],
+        cordinators:this.fromBuilder.array([
+          ["", Validators.required],
+          ["", Validators.required]
+        ])
       }),
 
       skills:["",Validators.required],
@@ -33,9 +36,11 @@ export class JobAddComponent {
      }
 console.log("I am here")
     this.jobService.save(fromData).subscribe({
-      next:(job)=>{
+      next:(job:any)=>{
         console.log(job);
+
         alert("job success!")
+        this.router.navigate(["jobs/"+job.data._id])
       },
       error:(err)=>{
         console.log(err);

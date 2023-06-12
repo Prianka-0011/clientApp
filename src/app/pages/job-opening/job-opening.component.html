@@ -10,7 +10,13 @@
     </ul>
   </div>
   <div class="pt-3"
+
   *ngIf="jobs && jobs.length > 0">
+  <select [(ngModel)]="pageValue" (change)="pageSize()">
+    <option value="5">5</option>
+    <option value="10">5</option>
+    <option value="20">5</option>
+  </select>
   <button class="btn btn-dark me-4"
     [disabled]="disableBackward()"
     (click)="prev()">Prev</button>
