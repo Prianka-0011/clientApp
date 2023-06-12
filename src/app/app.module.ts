@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JobDetailComponent } from './pages/job-detail/job-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './pages/search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     JobOpeningComponent,
     HeaderComponent,
     HomeComponent,
-    JobDetailComponent
+    JobDetailComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

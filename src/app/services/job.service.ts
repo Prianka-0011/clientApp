@@ -14,9 +14,9 @@ export class JobService {
     console.log("service calling")
     return this.http.get<Jobopening[]>(`${this.baseUrl}/jobs?${query}`)
   }
-  getOne(jobId:string):Observable<Jobopening>{
+  getOne(jobId:string):Observable<any>{
 
-    return this.http.get<Jobopening>(`${this.baseUrl}/jobs/${jobId}`);
+    return this.http.get<any>(`${this.baseUrl}/jobs/${jobId}`);
   }
   getJobCount(search: string): Observable<Number> {
     return this.http.get<Number>(this.baseUrl + "/totalJobCount?search=" + search);

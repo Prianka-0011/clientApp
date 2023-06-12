@@ -20,7 +20,7 @@ if (jobId) {
   this.jobService.getOne(jobId).subscribe({next:(job)=>{
     if(job)
     {
-      this.jobOpen=job;
+      this.jobOpen=job.data;
     }
   },
   error:()=>{
